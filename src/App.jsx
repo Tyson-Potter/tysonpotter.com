@@ -2,17 +2,17 @@ import { useState, useEffect } from 'react'
 import './App.css'
 
 const ROLES = [
-  'Security Researcher',
+  'Software Developer',
+  'Security Enthusiast',
+  'AI Explorer',
   'Full-Stack Developer',
-  'CTF Player',
-  'Problem Solver',
 ]
 
 const SKILLS = {
-  Languages:  ['Python', 'JavaScript', 'C', 'Bash', 'SQL'],
-  Security:   ['Burp Suite', 'Nmap', 'Metasploit', 'Wireshark', 'OSINT'],
-  Frameworks: ['React', 'Node.js', 'Express', 'Vite', 'Firebase'],
-  Platforms:  ['Linux', 'Docker', 'AWS', 'GitHub', 'Kali Linux'],
+  Languages:   ['JavaScript', 'Python', 'Bash', 'HTML', 'CSS'],
+  Development: ['Node.js', 'React', 'Vite', 'Firebase'],
+  Security:    ['Network Troubleshooting', 'Active Directory', 'Linux', 'Security Fundamentals'],
+  Interests:   ['Artificial Intelligence', 'Cybersecurity', 'Automation'],
 }
 
 const PROJECTS = [
@@ -23,30 +23,6 @@ const PROJECTS = [
     github: 'https://github.com/Tyson-Potter/ChessProgram',
   },
   {
-    name: 'Grocery API',
-    desc: 'RESTful API for managing grocery lists with full CRUD operations.',
-    tags: ['Node.js', 'API', 'REST'],
-    github: 'https://github.com/Tyson-Potter/Grocery-API2',
-  },
-  {
-    name: 'Firebase Recipes App',
-    desc: 'Full-stack recipe web app with Firebase authentication and real-time database.',
-    tags: ['React', 'Firebase', 'Auth'],
-    github: 'https://github.com/Tyson-Potter/firebase-recipes-web-app',
-  },
-  {
-    name: 'Calculator',
-    desc: 'Clean, functional calculator with a polished UI and edge-case handling.',
-    tags: ['JavaScript', 'CSS', 'HTML'],
-    github: 'https://github.com/Tyson-Potter/Calculator-FIXED-',
-  },
-  {
-    name: 'CSS Website',
-    desc: 'Example multi-page website showcasing advanced CSS layouts and animations.',
-    tags: ['HTML', 'CSS', 'Responsive'],
-    github: 'https://github.com/Tyson-Potter/ExampleCSSWesbite',
-  },
-  {
     name: 'TysonPotter.com',
     desc: 'This site — built with Vite + React, deployed to Firebase Hosting.',
     tags: ['React', 'Vite', 'Firebase'],
@@ -54,36 +30,13 @@ const PROJECTS = [
   },
 ]
 
-const CTF = [
-  {
-    year: '2024',
-    event: 'HackTheBox CTF',
-    result: 'Top 5%',
-    desc: 'Web exploitation and binary reversing track. Solved 12 of 14 challenges.',
-  },
-  {
-    year: '2024',
-    event: 'TryHackMe',
-    result: 'Top 1%',
-    desc: 'Completed 100+ rooms across web, network, forensics, and privilege escalation paths.',
-  },
-  {
-    year: '2023',
-    event: 'PicoCTF',
-    result: 'Competitor',
-    desc: 'Focused on cryptography and binary exploitation — strong finish in regional division.',
-  },
-]
-
 const TERMINAL_LINES = [
   { prompt: '$ ', text: 'whoami', delay: 300 },
   { prompt: '',   text: 'tyson_potter', delay: 900,  type: 'green' },
-  { prompt: '$ ', text: 'cat about.txt', delay: 1500 },
-  { prompt: '',   text: 'Security-focused developer.', delay: 2100 },
-  { prompt: '',   text: 'Break things. Learn why. Build better.', delay: 2500 },
-  { prompt: '$ ', text: 'echo $AVAILABILITY', delay: 3300 },
-  { prompt: '',   text: '> Open to opportunities ✓', delay: 4000, type: 'cyan' },
-  { prompt: '$ ', text: '▋', delay: 4700, type: 'blink' },
+  { prompt: '$ ', text: 'cat stack.txt', delay: 1500 },
+  { prompt: '',   text: 'JavaScript · React · Node.js', delay: 2100 },
+  { prompt: '',   text: 'Firebase · Vite · CSS', delay: 2500 },
+  { prompt: '$ ', text: '▋', delay: 3200, type: 'blink' },
 ]
 
 function Typewriter({ words }) {
@@ -133,7 +86,7 @@ function Terminal() {
         <span className="dot" style={{ background: '#ff5f56' }} />
         <span className="dot" style={{ background: '#ffbd2e' }} />
         <span className="dot" style={{ background: '#27c93f' }} />
-        <span className="terminal-title">tyson@kali: ~</span>
+        <span className="terminal-title">tyson — bash</span>
       </div>
       <div className="terminal-body">
         {TERMINAL_LINES.map((line, i) =>
@@ -189,12 +142,12 @@ export default function App() {
             <Typewriter words={ROLES} />
           </p>
           <p className="hero-desc">
-            I find vulnerabilities, build secure systems, and compete in CTF challenges.
-            Attacker's mindset. Developer's discipline.
+            Developer from Utah. Into security, AI, and building things that matter.
+            Always learning, always shipping.
           </p>
           <div className="hero-btns">
             <a href="#projects" className="btn-primary">View My Work</a>
-            <a href="#contact"  className="btn-ghost">Get In Touch</a>
+            <a href="/resume.pdf" target="_blank" rel="noreferrer" className="btn-ghost">Download Resume</a>
           </div>
         </div>
         <div className="hero-scroll">
@@ -206,36 +159,28 @@ export default function App() {
       {/* ── About ── */}
       <section id="about" className="section">
         <div className="container about-grid">
+          <div className="about-left">
+            <img src="/headshot.jpg" alt="Tyson Potter" className="headshot" />
+          </div>
           <div className="about-text">
             <p className="section-label mono accent">01. about</p>
             <h2 className="section-title">
               Who I <span className="accent">Am</span>
             </h2>
             <p>
-              I'm a security-focused developer with a passion for understanding how systems
-              break — and then making them bulletproof. I blend offensive security knowledge
-              with modern development practices to build things that actually hold up.
+              I'm Tyson Potter, a developer from Utah with a passion for security,
+              AI, and building software that actually does something useful. When I'm
+              not writing code I'm out hiking — same energy, different terrain.
             </p>
             <p>
-              Whether it's hunting for CVEs, architecting auth systems, or grinding through
-              CTF challenges at 2am, I'm always chasing the next hard problem.
+              I work across the stack with a focus on automation, networking, and
+              systems — the kind of problems where you have to understand what's
+              happening under the hood to solve them right.
             </p>
-            <div className="about-stats">
-              <div className="stat">
-                <span className="stat-num accent">50+</span>
-                <span className="stat-label">CTF Solves</span>
-              </div>
-              <div className="stat">
-                <span className="stat-num accent">10+</span>
-                <span className="stat-label">Projects</span>
-              </div>
-              <div className="stat">
-                <span className="stat-num accent">3+</span>
-                <span className="stat-label">Yrs Experience</span>
-              </div>
-            </div>
           </div>
-          <Terminal />
+          <div className="about-right">
+            <Terminal />
+          </div>
         </div>
       </section>
 
@@ -292,28 +237,14 @@ export default function App() {
         </div>
       </section>
 
-      {/* ── CTF / Research ── */}
+      {/* ── Research ── */}
       <section id="research" className="section section-alt">
         <div className="container">
           <p className="section-label mono accent center">04. research</p>
           <h2 className="section-title center">
             CTF <span className="accent">&amp; Research</span>
           </h2>
-          <div className="timeline">
-            {CTF.map((e, i) => (
-              <div key={i} className="timeline-item">
-                <div className="timeline-year mono">{e.year}</div>
-                <div className="timeline-dot" />
-                <div className="timeline-content">
-                  <div className="timeline-header">
-                    <h3>{e.event}</h3>
-                    <span className="badge">{e.result}</span>
-                  </div>
-                  <p>{e.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <p className="contact-sub">Writeups and research coming soon.</p>
         </div>
       </section>
 
@@ -325,7 +256,7 @@ export default function App() {
             Get In <span className="accent">Touch</span>
           </h2>
           <p className="contact-sub">
-            Open to security roles, freelance projects, and CTF team invites.
+            Open to new opportunities, freelance projects, and collaborations.
           </p>
           <div className="contact-links">
             <a href="mailto:tysonpottersd@gmail.com" className="contact-card">
@@ -340,7 +271,7 @@ export default function App() {
               </svg>
               <span>GitHub</span>
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="contact-card">
+            <a href="https://www.linkedin.com/in/tyson-potter-6859aa288/" target="_blank" rel="noreferrer" className="contact-card">
               <svg className="contact-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
               </svg>
