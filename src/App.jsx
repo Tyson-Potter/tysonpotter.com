@@ -2,13 +2,19 @@ import { useState } from 'react'
 import './App.css'
 
 const SKILLS = {
-  Languages:  ['JavaScript', 'Python', 'Bash'],
+  Languages:  ['JavaScript', 'Python', 'PowerShell', 'Bash'],
   Frontend:   ['React', 'Vite', 'HTML', 'CSS'],
   Backend:    ['Node.js', 'Firebase', 'REST APIs'],
   Tools:      ['Git', 'Linux', 'VS Code'],
 }
 
 const PROJECTS = [
+  {
+    name: 'AD Security Audit Script',
+    desc: 'PowerShell script that audits an Active Directory environment for common blue-team risks: stale accounts, non-expiring passwords, privileged group membership, disabled-but-still-privileged users, and service accounts. Exports findings to CSV reports.',
+    tags: ['PowerShell', 'Active Directory', 'Security'],
+    github: 'https://github.com/Tyson-Potter/powershell-ad-audit-script',
+  },
   {
     name: 'Multiplayer Chess',
     desc: 'Full-stack multiplayer chess: React frontend, Express + MongoDB backend, custom move validation, shared-key game sessions. Local-only build for now. Still in progress.',
@@ -67,11 +73,11 @@ export default function App() {
       </header>
 
       {/* ── Hero ── */}
-      <section className="hero">
+      <section className="hero" aria-labelledby="hero-title">
         <div className="grid-bg" />
         <div className="hero-glow" />
         <div className="container hero-content">
-          <h1 className="hero-name">Tyson Potter</h1>
+          <h1 id="hero-title" className="hero-name">Tyson Potter</h1>
           <p className="hero-role">Software developer · Utah</p>
           <p className="hero-desc">
             I build web apps with JavaScript, React, and Node. Right now I'm
@@ -94,7 +100,7 @@ export default function App() {
       </section>
 
       {/* ── About ── */}
-      <section id="about" className="section">
+      <section id="about" className="section" aria-labelledby="about-title">
         <div className="container about-grid">
           <div className="about-left">
             <picture>
@@ -112,7 +118,7 @@ export default function App() {
           </div>
           <div className="about-text">
             <p className="section-label mono accent">01. about</p>
-            <h2 className="section-title">
+            <h2 id="about-title" className="section-title">
               About <span className="accent">Me</span>
             </h2>
             <p>
@@ -131,10 +137,10 @@ export default function App() {
       </section>
 
       {/* ── Skills ── */}
-      <section id="skills" className="section section-alt">
+      <section id="skills" className="section section-alt" aria-labelledby="skills-title">
         <div className="container">
           <p className="section-label mono accent center">02. skills</p>
-          <h2 className="section-title center">
+          <h2 id="skills-title" className="section-title center">
             Tech <span className="accent">Stack</span>
           </h2>
           <div className="skills-grid">
@@ -153,10 +159,10 @@ export default function App() {
       </section>
 
       {/* ── Projects ── */}
-      <section id="projects" className="section">
+      <section id="projects" className="section" aria-labelledby="projects-title">
         <div className="container">
           <p className="section-label mono accent center">03. projects</p>
-          <h2 className="section-title center">
+          <h2 id="projects-title" className="section-title center">
             Featured <span className="accent">Work</span>
           </h2>
           <div className="projects-grid">
@@ -189,10 +195,10 @@ export default function App() {
       </section>
 
       {/* ── Contact ── */}
-      <section id="contact" className="section section-alt">
+      <section id="contact" className="section section-alt" aria-labelledby="contact-title">
         <div className="container contact-wrap">
           <p className="section-label mono accent center">04. contact</p>
-          <h2 className="section-title center">
+          <h2 id="contact-title" className="section-title center">
             Get In <span className="accent">Touch</span>
           </h2>
           <p className="contact-sub">
