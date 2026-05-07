@@ -16,6 +16,12 @@ const PROJECTS = [
     github: 'https://github.com/Tyson-Potter/powershell-ad-audit-script',
   },
   {
+    name: 'Phishing Email Rater',
+    desc: 'Python tool that triages .eml files with three layers: rule-based checks (SPF/DKIM/DMARC, display-name spoofing, URL defang, WHOIS), a HuggingFace DistilBERT classifier, and a local LLM verdict. Combines all three into a Low/Medium/High score with explicit rationale.',
+    tags: ['Python', 'Security', 'ML', 'LLM'],
+    github: 'https://github.com/Tyson-Potter/phishing-email-rater',
+  },
+  {
     name: 'Multiplayer Chess',
     desc: 'Full-stack multiplayer chess: React frontend, Express + MongoDB backend, custom move validation, shared-key game sessions. Local-only build for now. Still in progress.',
     tags: ['React', 'Express', 'MongoDB', 'Node.js'],
