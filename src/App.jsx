@@ -78,11 +78,11 @@ export default function App() {
         <div className="hero-glow" />
         <div className="container hero-content">
           <h1 id="hero-title" className="hero-name">Tyson Potter</h1>
-          <p className="hero-role">Software developer · Utah</p>
+          <p className="hero-role">IT Support & Security · Relocating to KC</p>
           <p className="hero-desc">
-            I build web apps with JavaScript, React, and Node. Right now I'm
-            shifting focus toward security and learning networking, Linux,
-            and pen-testing fundamentals.
+            IT support professional moving into security. Hands-on with
+            networking, Linux, and pen-testing fundamentals — plus a
+            background building web apps with JavaScript, React, and Node.
           </p>
           <div className="hero-btns">
             <a href="#projects" className="btn-primary">View My Work</a>
