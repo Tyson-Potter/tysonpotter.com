@@ -2,10 +2,10 @@ import { useState } from 'react'
 import './App.css'
 
 const SKILLS = {
-  Languages: ['JavaScript', 'Python', 'PowerShell', 'Bash'],
-  Frontend: ['React', 'Vite', 'HTML', 'CSS'],
-  Backend: ['Node.js', 'Firebase', 'REST APIs'],
-  Tools: ['Git', 'Linux', 'VS Code'],
+  Security:   ['Nmap', 'Wireshark', 'Burp Suite', 'Nessus', 'SIEM'],
+  Networking: ['TCP/IP', 'DNS', 'DHCP', 'VPNs', 'Firewalls'],
+  Systems:    ['Active Directory', 'Linux', 'Windows Server', 'PowerShell', 'Bash'],
+  Dev:        ['Python', 'JavaScript', 'React', 'Node.js', 'Git'],
 }
 
 const PROJECTS = [
@@ -122,15 +122,17 @@ export default function App() {
               About <span className="accent">Me</span>
             </h2>
             <p>
-              Self-taught developer from Utah. Started messing with JavaScript
-              back in 2020 and have been building stuff ever since: small
-              full-stack apps, a chess engine, a poker tracker for myself.
+              IT support professional from Utah, relocating to Kansas City.
+              I got into tech through self-teaching JavaScript back in 2020,
+              but quickly realized what I really care about is the
+              under-the-hood stuff — networking, operating systems, and
+              how things break.
             </p>
             <p>
-              I'm moving toward security because I like the under-the-hood
-              stuff. How networks actually work, how operating systems work,
-              how things break. Honestly more interesting to me than picking a
-              CSS framework. Outside of code I hike a lot and play chess.
+              Now I'm focused on security: building AD audit scripts,
+              triaging phishing emails, and learning pen-testing
+              fundamentals. I still write code daily — it just serves a
+              different purpose now. Outside of work I hike and play chess.
             </p>
           </div>
         </div>
@@ -202,7 +204,7 @@ export default function App() {
             Get In <span className="accent">Touch</span>
           </h2>
           <p className="contact-sub">
-            Looking for entry-level software and security roles. Happy to chat.
+            Looking for IT support and security roles in the Kansas City area. Happy to chat.
           </p>
           <div className="contact-links">
             <a href="mailto:tysonpottersd@gmail.com" className="contact-card">
